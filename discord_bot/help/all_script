@@ -1,0 +1,54 @@
+
+[[[[[[[[[[[[TO_SENT_FILE_MSG]]]]]]]]]]]]]]
+
+@client.command()
+async def ping(ctx):
+    await ctx.send("PONG")
+
+[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]
+
+[[[[[[[[[[[[TO_SENT_FILE_DIS]]]]]]]]]]]]]]
+
+@client.command()
+async def meme(ctx):
+    await ctx.send(file=File(next()))
+
+[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]
+
+
+
+[[[[[[[[[[[[[cogs]]]]]]]]]]]]]]]]]
+
+from discord.ext import commands
+
+class normal(commands.Cog):
+
+    def __init__(self, client):
+        self.client = client
+
+    #Events
+    @commands.Cog.listener()
+    async def on_ready(self):
+        print(f"{__name__} ready")
+
+    #commands
+    @commands.command()
+    async def daw(self, ctx):
+        await ctx.send('Pong!')
+
+
+def setup(client):
+    client.add_cog(normal(client))
+
+[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]
+
+
+
+[[[[[[[[[[[[[[[[[[[[[[[EMBED FILE]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+
+embed = discord.Embed(title="Title", description="Desc", color=0x00ff00) #creates embed
+file = discord.File("path/to/image/file.png", filename="image.png")
+embed.set_image(url="attachment://image.png")
+await ctx.send(file=file, embed=embed)
+
+[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
