@@ -34,12 +34,7 @@ client.remove_command("help")
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
-    test_area = client.get_channel(898825076332433448)
-    change_status.start()
-    await test_area.send("READY")
-    print("ready")
-    bot_ready_embed = Embed(title="title here")
-    #await test_area.send(embed=bot_ready_embed)
+
 
 
 
